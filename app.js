@@ -1,6 +1,6 @@
 /* ======================= КОНФИГУРАЦИЯ ======================= */
 const CONFIG = {
-  API_URL: 'https://script.google.com/macros/s/ВАШ_ID_ДЕПЛОЯ/exec',
+  API_URL: 'https://script.google.com/macros/s/AKfycbzqppS0xEi2hpqyB4D_BWHAmCOk84cweZireeeGxEzSf9elEDGhuCG1z_KNq8uRkpLZWA/exec',
   CACHE_KEY: 'parfum_products_cache',
   CART_KEY: 'parfum_cart',
   USER_KEY: 'parfum_user_info',
