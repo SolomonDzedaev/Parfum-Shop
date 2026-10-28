@@ -4,20 +4,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Parfum Shop — Магазин парфюмерии</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <header class="header">
   <div class="container header__inner">
-    <h1 class="logo">✨ Parfum Shop</h1>
-    <button id="cartBtn" class="cart-btn">🛒 Корзина <span id="cartCount" class="cart-count">0</span></button>
+    <div class="logo">✨ <span>Parfum</span> Shop</div>
+    <button id="cartBtn" class="cart-btn">
+      <span class="cart-btn__icon">🛍️</span> Корзина <span id="cartCount" class="cart-count">0</span>
+    </button>
   </div>
 </header>
+
+<section class="hero">
+  <div class="container hero__inner">
+    <h1 class="hero__title">Мир изысканных ароматов</h1>
+    <p class="hero__subtitle">Оригинальная парфюмерия премиум-класса с доставкой. Каждый аромат подобран вручную.</p>
+  </div>
+</section>
 
 <main class="container">
   <div id="statusMsg" class="status-msg"></div>
   <section id="productGrid" class="product-grid"></section>
 </main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2025 Parfum Shop. Все ароматы оригинальные, с сертификатом подлинности.</p>
+  </div>
+</footer>
 
 <!-- Корзина -->
 <div id="cartModal" class="modal hidden">
@@ -51,20 +69,37 @@
   </div>
 </div>
 
+<!-- Тост-уведомления -->
+<div id="toast" class="toast hidden"></div>
+
 <template id="productCardTpl">
   <article class="product-card">
-    <img class="product-card__img" src="" alt="">
+    <div class="product-card__img-wrap">
+      <img class="product-card__img" src="" alt="">
+      <span class="product-card__volume-badge"></span>
+    </div>
     <div class="product-card__body">
       <div class="product-card__brand"></div>
       <h3 class="product-card__name"></h3>
       <div class="product-card__notes"></div>
       <div class="product-card__footer">
         <div class="product-card__price"></div>
-        <div class="product-card__volume"></div>
+        <button class="btn btn-add">В корзину</button>
       </div>
-      <button class="btn btn-add">В корзину</button>
     </div>
   </article>
+</template>
+
+<template id="skeletonTpl">
+  <div class="product-card product-card--skeleton">
+    <div class="skeleton skeleton--img"></div>
+    <div class="product-card__body">
+      <div class="skeleton skeleton--line" style="width:40%"></div>
+      <div class="skeleton skeleton--line" style="width:70%;height:18px"></div>
+      <div class="skeleton skeleton--line" style="width:90%"></div>
+      <div class="skeleton skeleton--line" style="width:50%;height:30px;margin-top:10px"></div>
+    </div>
+  </div>
 </template>
 
 <script src="app.js"></script>
