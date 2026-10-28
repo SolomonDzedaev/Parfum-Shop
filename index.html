@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parfum Shop — Магазин парфюмерии</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container header__inner">
+    <h1 class="logo">✨ Parfum Shop</h1>
+    <button id="cartBtn" class="cart-btn">🛒 Корзина <span id="cartCount" class="cart-count">0</span></button>
+  </div>
+</header>
+
+<main class="container">
+  <div id="statusMsg" class="status-msg"></div>
+  <section id="productGrid" class="product-grid"></section>
+</main>
+
+<!-- Корзина -->
+<div id="cartModal" class="modal hidden">
+  <div class="modal__content">
+    <button class="modal__close" data-close="cartModal">&times;</button>
+    <h2>Ваша корзина</h2>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-total">Итого: <span id="cartTotal">0</span> ₽</div>
+    <button id="checkoutBtn" class="btn btn-primary" disabled>Оформить заказ</button>
+  </div>
+</div>
+
+<!-- Оформление заказа -->
+<div id="orderModal" class="modal hidden">
+  <div class="modal__content">
+    <button class="modal__close" data-close="orderModal">&times;</button>
+    <h2>Оформление заказа</h2>
+    <form id="orderForm">
+      <label>ФИО *
+        <input type="text" id="orderName" required placeholder="Иванов Иван Иванович">
+      </label>
+      <label>Телефон *
+        <input type="tel" id="orderPhone" required placeholder="+7 (___) ___-__-__">
+      </label>
+      <label>Удобный мессенджер / комментарий
+        <textarea id="orderComment" placeholder="Например: WhatsApp, после 18:00"></textarea>
+      </label>
+      <div id="orderSummary" class="order-summary"></div>
+      <button type="submit" class="btn btn-primary" id="orderSubmitBtn">Отправить заявку</button>
+    </form>
+  </div>
+</div>
+
+<template id="productCardTpl">
+  <article class="product-card">
+    <img class="product-card__img" src="" alt="">
+    <div class="product-card__body">
+      <div class="product-card__brand"></div>
+      <h3 class="product-card__name"></h3>
+      <div class="product-card__notes"></div>
+      <div class="product-card__footer">
+        <div class="product-card__price"></div>
+        <div class="product-card__volume"></div>
+      </div>
+      <button class="btn btn-add">В корзину</button>
+    </div>
+  </article>
+</template>
+
+<script src="app.js"></script>
+</body>
+</html>
