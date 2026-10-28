@@ -38,9 +38,28 @@ img{display:block;max-width:100%;}
 /* CARD */
 .product-card{background:var(--card-bg);border-radius:var(--radius);overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.06);display:flex;flex-direction:column;transition:transform .25s, box-shadow .25s;}
 .product-card:hover{transform:translateY(-6px);box-shadow:0 16px 32px rgba(0,0,0,.12);}
-.product-card__img-wrap{position:relative;background:linear-gradient(135deg,#f0ebe1,#e4ddcf);aspect-ratio:1/1;overflow:hidden;}
-.product-card__img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
-.product-card:hover .product-card__img{transform:scale(1.06);}
+.product-card__img-wrap{
+  position:relative;
+  background:linear-gradient(135deg,#f0ebe1,#e4ddcf);
+  aspect-ratio:3/4; /* под пропорции типичных фото флаконов (375x500) */
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.product-card__img{
+  width:100%;
+  height:100%;
+  object-fit:contain;  /* показываем весь флакон целиком, ничего не обрезаем */
+  padding:16px;         /* небольшой "воздух" по краям */
+  box-sizing:border-box;
+  transition:transform .4s;
+}
+
+.product-card:hover .product-card__img{
+  transform:scale(1.05);
+}
 .product-card__volume-badge{position:absolute;top:10px;right:10px;background:rgba(27,22,17,.75);color:#f3e6c8;font-size:12px;padding:4px 10px;border-radius:20px;backdrop-filter:blur(4px);}
 .product-card__body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1;}
 .product-card__brand{text-transform:uppercase;font-size:11px;color:var(--accent-dark);letter-spacing:1.5px;font-weight:600;}
